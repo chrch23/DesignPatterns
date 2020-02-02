@@ -21,7 +21,7 @@ class UsbAdapter: UsbProtocol {
     private var _usb_c: Usb_c
     
     init(usb_c: Usb_c) {
-        self ._usb_c = usb_c
+        self._usb_c = usb_c
     }
     
     func connectMac() {
