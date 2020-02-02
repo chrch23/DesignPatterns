@@ -16,16 +16,16 @@ class Usb: UsbProtocol {
     }
 }
 
-class UsbAdapter: UsbProtocol {
+class Adapter: UsbProtocol {
     
     private var _usb_c: Usb_c
     
     init(usb_c: Usb_c) {
-        self._usb_c = usb_c
+        _usb_c = usb_c
     }
     
     func connectMac() {
-        print("Connect iPhone to Mac using usb\n")
+        _usb_c.connectIphone()
     }
     
 }
@@ -36,5 +36,5 @@ usb_c.connectIphone()
 let usb = Usb()
 usb.connectMac()
 
-let usbAdapter = UsbAdapter(usb_c: usb_c)
-usbAdapter.connectMac()
+let adapter = Adapter(usb_c: usb_c)
+adapter.connectMac()
